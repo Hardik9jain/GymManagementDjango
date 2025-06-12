@@ -1,1 +1,1 @@
-web: gunicorn GymManagementDjango.wsgi
+web: python manage.py migrate && python manage.py collectstatic --noinput && gunicorn GymManagementDjango.wsgi
