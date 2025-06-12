@@ -4,8 +4,6 @@ from .models import *
 from django.contrib.auth import authenticate, logout, login
 from datetime import date
 from django.db.models import Q
-from django.http import HttpResponse
-
 
 # Create your views here.
 
@@ -314,15 +312,5 @@ def Logout(request):
     logout(request)
     return redirect('index')
 
-from django.contrib.auth import get_user_model
-
-def create_admin_user():
-    User = get_user_model()
-    if not User.objects.filter(username='admin').exists():
-        User.objects.create_superuser('jain', ' jamedkhanq23@gmail.com', 'Rishi@6318')
-
-def index(request):
-    create_admin_user()  # Only for initial setup!
-    return HttpResponse("Admin created. Now remove this line.")
 
 
