@@ -4,6 +4,8 @@ from .models import *
 from django.contrib.auth import authenticate, logout, login
 from datetime import date
 from django.db.models import Q
+from django.http import HttpResponse
+
 
 # Create your views here.
 
